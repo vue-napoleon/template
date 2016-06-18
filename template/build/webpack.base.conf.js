@@ -5,7 +5,7 @@ var projectRoot = path.resolve(__dirname, '../')
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './example/index.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -17,15 +17,13 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
-      'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'assets': path.resolve(__dirname, '../src/assets')
     }
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
-    {{#lint}}
     preLoaders: [
       {
         test: /\.vue$/,
@@ -40,7 +38,6 @@ module.exports = {
         exclude: /node_modules/
       }
     ],
-    {{/lint}}
     loaders: [
       {
         test: /\.vue$/,
@@ -78,11 +75,9 @@ module.exports = {
       }
     ]
   },
-  {{#lint}}
   eslint: {
     formatter: require('eslint-friendly-formatter')
   },
-  {{/lint}}
   vue: {
     loaders: utils.cssLoaders()
   }

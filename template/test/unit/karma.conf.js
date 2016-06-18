@@ -54,7 +54,12 @@ module.exports = function (config) {
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
     browsers: ['PhantomJS'],
+    {{#if_eq unit "jasmine"}}
+    frameworks: ['jasmine'],
+    {{/if_eq}}
+    {{#if_eq unit "mocha"}}
     frameworks: ['mocha', 'sinon-chai'],
+    {{/if_eq}}
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     preprocessors: {
