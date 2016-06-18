@@ -1,0 +1,77 @@
+{
+  "prompts": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "message": "项目名"
+    },
+    "description": {
+      "type": "string",
+      "required": false,
+      "message": "项目描述",
+      "default": "一个 Vue.js 组件"
+    },
+    "author": {
+      "type": "string",
+      "message": "作者"
+    },
+    "lint": {
+      "type": "confirm",
+      "message": "使用 ESLint 检查你的代码?"
+    },
+    "lintConfig": {
+      "when": "lint",
+      "type": "list",
+      "message": "选择 ESLint 方案?",
+      "choices": [
+        {
+          "name": "Standard (https://github.com/feross/standard)",
+          "value": "standard",
+          "short": "Standard"
+        },
+        {
+          "name": "AirBNB (https://github.com/airbnb/javascript)",
+          "value": "airbnb",
+          "short": "AirBNB"
+        },
+        {
+          "name": "none (configure it yourself)",
+          "value": "none",
+          "short": "none"
+        }
+      ]
+    },
+    "unit": {
+      "when": "unit",
+      "type": "list",
+      "message": "选择测试框架?",
+      "choices": [
+        {
+          "name": "Jasmine (http://jasmine.github.io/)",
+          "value": "jasmine",
+          "short": "Jasmine"
+        },
+        {
+          "name": "Mocha (http://mochajs.org/)",
+          "value": "mocha",
+          "short": "Mocha"
+        },
+        {
+          "name": "不使用测试框架 ( 没有测试用例还好意思写组件 ^O^ )",
+          "value": "none",
+          "short": "none"
+        }
+      ]
+    },
+    "e2e": {
+      "type": "confirm",
+      "message": "是否使用 e2e 测试?"
+    }
+  },
+  "filters": {
+    ".eslintrc.js": "lint",
+    "test/unit/**/*": "unit",
+    "test/e2e/**/*": "e2e"
+  },
+  "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
+}
