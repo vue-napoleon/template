@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "{{ description }}",
   "author": "{{ author }}",
-  "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
@@ -55,7 +54,6 @@
     "karma": "^0.13.15",
     "karma-coverage": "^0.5.5",
     "karma-phantomjs-launcher": "^1.0.0",
-    "karma-sinon-chai": "^1.2.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.24",
     "karma-webpack": "^1.7.0",
@@ -70,6 +68,7 @@
     "karma-jasmine": "^1.0.2",
     {{/if_eq}}
     {{#if_eq unit "mocha"}}
+    "karma-sinon-chai": "^1.2.0",
     "karma-mocha": "^0.2.2",
     "mocha": "^2.4.5",
     "chai": "^3.5.0",
@@ -85,6 +84,8 @@
     "ora": "^0.2.0",
     "shelljs": "^0.6.0",
     "url-loader": "^0.5.7",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
     "vue-loader": "^8.3.0",
